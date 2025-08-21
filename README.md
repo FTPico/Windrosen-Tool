@@ -30,8 +30,8 @@ Die Daten werden automatisch über die [OpenWeatherMap API](https://openweatherm
    pip install -r requirements.txt
 
 4. Eine .env-Datei im Projektordner erstellen und den API-Key eintragen:
-
-> OWM_API_KEY=dein_api_key_hier
+   ```bash   
+ OWM_API_KEY=dein_api_key_hier
 
 ## ▶️ Nutzung
    ```bash

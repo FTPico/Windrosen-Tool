@@ -14,9 +14,9 @@ load_dotenv()  # .env Datei einlesen, um Umgebungsvariablen zu laden (API-KEY ge
 API_KEY = os.getenv("OWM_API_KEY")
 
 #Eingabe der Stadt für die Wetterdaten, alternativ Latitude und Longitude verwenden
-CITY = "Hamburg"   # oder None, wenn du Koordinaten verwenden willst
-LAT = 53.5511
-LON = 9.9937
+CITY = "Potsdam"   # oder None, wenn du Koordinaten verwenden willst
+LAT = 52.4000
+LON = 13.0667
 
 if CITY:
     URL = f"http://api.openweathermap.org/data/2.5/forecast?q={CITY}&appid={API_KEY}&units=metric"
@@ -26,8 +26,13 @@ else:
 # Sicherstellen, dass der Cache-Ordner existiert
 os.makedirs("data", exist_ok=True)
 
-CACHE_FILE = Path("data/weather_cache.csv")
+# Daten-Cache pro Stadt
+CACHE_FILE = Path(f"data/weather_cache_{CITY.lower()}.csv")
 CACHE_EXPIRY_HOURS = 24  # Cache-Lebensdauer
+
+# Ordner für die Grafiken
+OUTPUT_DIR = Path("windrose_plots")
+OUTPUT_DIR.mkdir(exist_ok=True)
 
 # --------------------------
 # Daten abrufen
@@ -82,6 +87,14 @@ def plot_windrose(df, city):
 
     # Titel setzen
     plt.title(f"Windrose für {city}\nZeitraum: {start_date} – {end_date}", fontsize=12)
+
+    # Bild speichern
+    df['datetime'] = pd.to_datetime(df['datetime'])
+    start_str = df['datetime'].min().strftime('%d.%m.%Y_%H-%M')
+    end_str = df['datetime'].max().strftime('%d.%m.%Y_%H-%M')
+    filename = OUTPUT_DIR / f"windrose_{city}_{start_str}_bis_{end_str}.png"
+    plt.savefig(filename, bbox_inches='tight', dpi=300)
+    print(f"Windrose gespeichert unter: {filename}")
 
     plt.show()
 
