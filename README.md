@@ -1,0 +1,17 @@
+# 🌬️ Windrosen-Tool
+
+Ein kleines Python-Projekt zur Visualisierung von Winddaten als **Windrose**.  
+Die Daten werden automatisch über die [OpenWeatherMap API](https://openweathermap.org/api) abgerufen und lokal gecached, sodass unnötige API-Calls vermieden werden.  
+
+## 📊 Features
+- Abruf von Wetterdaten (Windgeschwindigkeit & Windrichtung) per OpenWeatherMap API  
+- Unterstützung für Standortsuche per Stadtname oder Koordinaten (Breite/Länge)  
+- Speicherung der Rohdaten als CSV (`data/weather_cache.csv`)  
+- Erstellung einer **Windrose** mit Matplotlib & Windrose-Package  
+- Einfache Anpassung der Stadt / Koordinaten  
+
+## 🛠️ Installation
+1. Repository klonen:
+   ```bash
+   git clone https://github.com/FTPico/Windrosen-Tool.git
+   cd Windrosen-Tool
