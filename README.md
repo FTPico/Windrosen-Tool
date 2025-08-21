@@ -17,22 +17,22 @@ Die Daten werden automatisch über die [OpenWeatherMap API](https://openweatherm
    cd Windrosen-Tool
 
 2. Virtuelle Umgebung erstellen und aktivieren:
-
-      > python -m venv .venv
-      # Windows (PowerShell)
-      > .venv\Scripts\activate
-      # Linux/Mac
-      > source .venv/bin/activate
+   ```bash
+   python -m venv .venv
+   Windows (PowerShell)
+   .venv\Scripts\activate
+   Linux/Mac
+   source .venv/bin/activate
 
 
 3. Abhängigkeiten installieren:
-
-> pip install -r requirements.txt
-
+   ```bash
+   pip install -r requirements.txt
 
 4. Eine .env-Datei im Projektordner erstellen und den API-Key eintragen:
 
 > OWM_API_KEY=dein_api_key_hier
 
 ## ▶️ Nutzung
-> python src/main.py
+   ```bash
+   python src/main.py
