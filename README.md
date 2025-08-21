@@ -7,7 +7,7 @@ Die Daten werden automatisch über die [OpenWeatherMap API](https://openweatherm
 - Abruf von Wetterdaten (Windgeschwindigkeit & Windrichtung) per OpenWeatherMap API  
 - Unterstützung für Standortsuche per Stadtname oder Koordinaten (Breite/Länge)  
 - Speicherung der Rohdaten als CSV (`data/weather_cache.csv`)  
-- Erstellung einer **Windrose** mit Matplotlib & Windrose-Package  
+- Erstellung und lokaler Speicherung einer **Windrose** mit Matplotlib & Windrose-Package  
 - Einfache Anpassung der Stadt / Koordinaten  
 
 ## 🛠️ Installation
@@ -31,7 +31,7 @@ Die Daten werden automatisch über die [OpenWeatherMap API](https://openweatherm
 
 4. Eine .env-Datei im Projektordner erstellen und den API-Key eintragen:
    ```bash   
- OWM_API_KEY=dein_api_key_hier
+   OWM_API_KEY = dein_api_key_hier
 
 ## ▶️ Nutzung
    ```bash

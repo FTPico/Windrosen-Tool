@@ -14,7 +14,7 @@ load_dotenv()  # .env Datei einlesen, um Umgebungsvariablen zu laden (API-KEY ge
 API_KEY = os.getenv("OWM_API_KEY")
 
 #Eingabe der Stadt für die Wetterdaten, alternativ Latitude und Longitude verwenden
-CITY = "Potsdam"   # oder None, wenn du Koordinaten verwenden willst
+CITY = "München"   # oder None, wenn du Koordinaten verwenden willst
 LAT = 52.4000
 LON = 13.0667
 
